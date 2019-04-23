@@ -1,0 +1,19 @@
+{
+  "name": "无上帝兵",
+  "name_en": "God Of Hacker",
+  "main": "index.js",
+  "icon": "female",
+  "version": "0.1",
+  "description": "上帝黑客，神之武器",
+  "description_en": "A powerful plugin for hacker who is God",
+  "author": {
+    "name": "Virink",
+    "email": "virink@outlook.com"
+  },
+  "category": "黑客工具",
+  "category_en": "Hacker",
+  "multiple": false,
+  "scripts": [
+    "php", "asp", "aspx", "custom"
+  ]
+}
