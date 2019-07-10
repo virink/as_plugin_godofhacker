@@ -182,6 +182,22 @@ module.exports = {
       name: '加入 CTF 交流群',
       msg: null
     },
+    defense: {
+      name: '绝对防御',
+      msg: function (l, t) {
+        l.open({
+          type: 1,
+          title: false,
+          skin: 'layui-bg-black',
+          closeBtn: 0,
+          anim: 2,
+          time: 3000,
+          area: '500px',
+          shadeClose: true,
+          content: `<span style="font-size:40px"># mv ~ /dev/null<br /># grep root /etc/nmap<br /># nmap -sT -A ${t ? t : 'localhost'}<br />恭喜</span>`
+        });
+      }
+    },
     findbug: {
       name: '一键找考点',
       msg: ''

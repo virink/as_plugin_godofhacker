@@ -1,4 +1,3 @@
-
 'use strict';
 
 
@@ -70,15 +69,22 @@ const formData = {
       label: LANG['tabs']['web']['form']['vulns'],
       labelWidth: 100,
       inputWidth: 240,
-      options: vuls.map((i) => { return { text: i, value: i } })
+      options: vuls.map((i) => {
+        return {
+          text: i,
+          value: i
+        }
+      })
     }, {
-      type: "newcolumn", offset: 10
+      type: "newcolumn",
+      offset: 10
     }, {
       type: "button",
       name: "exp_attack",
       value: LANG['tabs']['web']['form']['exp_attack']
     }, {
-      type: "newcolumn", offset: 10
+      type: "newcolumn",
+      offset: 10
     }, {
       type: "button",
       name: "priviledge",
@@ -98,7 +104,10 @@ const formData = {
           value: LANG['web'][key]['name']
         })
         if (index % 8 == 7) {
-          res.push({ type: "newcolumn", offset: 10 })
+          res.push({
+            type: "newcolumn",
+            offset: 10
+          })
         }
       });
       return res;
@@ -145,7 +154,10 @@ const formData = {
           value: LANG['ctf'][key]['name']
         })
         if (index % 10 == 9) {
-          res.push({ type: "newcolumn", offset: 10 })
+          res.push({
+            type: "newcolumn",
+            offset: 10
+          })
         }
       });
       return res;
@@ -192,7 +204,10 @@ const formData = {
           value: LANG['crack'][key]['name']
         })
         if (index % 10 == 9) {
-          res.push({ type: "newcolumn", offset: 10 })
+          res.push({
+            type: "newcolumn",
+            offset: 10
+          })
         }
       });
       return res;
@@ -239,7 +254,10 @@ const formData = {
           value: LANG['wireless'][key]['name']
         })
         if (index % 10 == 9) {
-          res.push({ type: "newcolumn", offset: 10 })
+          res.push({
+            type: "newcolumn",
+            offset: 10
+          })
         }
       });
       return res;
@@ -286,7 +304,10 @@ const formData = {
           value: LANG['hardware'][key]['name']
         })
         if (index % 10 == 9) {
-          res.push({ type: "newcolumn", offset: 10 })
+          res.push({
+            type: "newcolumn",
+            offset: 10
+          })
         }
       });
       return res;
@@ -333,7 +354,10 @@ const formData = {
           value: LANG['others'][key]['name']
         })
         if (index % 10 == 9) {
-          res.push({ type: "newcolumn", offset: 10 })
+          res.push({
+            type: "newcolumn",
+            offset: 10
+          })
         }
       });
       return res;
@@ -353,7 +377,7 @@ const tabsData = {
 }
 /**
  * 插件类
-*/
+ */
 class Plugin {
   constructor(opt) {
     // 创建一个 window
@@ -393,11 +417,16 @@ class Plugin {
     element.attachEvent('onButtonClick', (id) => {
       switch (id) {
         case 'godie':
-          return layer.alert('Hacked By Virink', { title: "FBI Warning", icon: 1 });
+          return layer.alert('Hacked By Virink', {
+            title: "FBI Warning",
+            icon: 1
+          });
         case 'joinctfgroup':
           return layer.alert('QQ Group : 473831530<br />\
-          Challenge : <br />https://shimo.im/doc/rhhI8AQQm58DK2fD',
-            { title: "FBI Warning", icon: 1 });
+          Challenge : <br />https://shimo.im/doc/rhhI8AQQm58DK2fD', {
+            title: "FBI Warning",
+            icon: 1
+          });
         default:
           break;
       }
@@ -412,7 +441,7 @@ class Plugin {
         let msg = LANG[tabId][id]['msg'];
         if (typeof msg == 'function') {
           this.win.win.progressOff();
-          return msg();
+          return msg(layer, target);
         }
         msg = (typeof msg == 'string') ? msg == "" ? [LANG['attacking']] : [msg] : msg;
         let i = 1000;

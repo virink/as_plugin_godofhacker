@@ -3,7 +3,7 @@
   "name_en": "God Of Hacker",
   "main": "index.js",
   "icon": "female",
-  "version": "0.1",
+  "version": "0.1.1",
   "description": "上帝黑客，神之武器",
   "description_en": "A powerful plugin for hacker who is God",
   "author": {
